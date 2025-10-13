@@ -1,0 +1,62 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+
+.modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+
+        &--oculto {
+            display: none;
+        }
+        &__contenido {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 60rem;
+            position: relative;
+        }
+        &__descripcion {
+            text-align: center;
+        }
+        &__cerrar {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 5rem;
+            font-weight: v.$bold;
+            cursor: pointer;
+        }
+        &__campo {
+            margin-bottom: 1.5rem;
+        }
+        &__label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        &__input {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: color.adjust(v.$gris-claro, $lightness: -5%);
+            border-radius: 0.5rem;
+            border: none;
+        }
+        &__submit {
+            @include m.boton(v.$gris-oscuro, v.$blanco);
+            border-radius: 1.3rem;
+            &--oculto {
+                display: none;
+            }
+        }
+    }

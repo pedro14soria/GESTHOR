@@ -1,0 +1,89 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+.sidebar {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity .5s;
+    &__mostrar {
+        padding: 2rem;
+        height: 100%;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgb(0 0 0 / .90);
+        z-index: 1000;
+        transition: opacity .5s;
+        @include m.tablet {
+            display: none;
+        }
+    }
+    &__ocultar {
+        opacity: 0;
+    }
+    @include m.tablet {
+        height: 100%;
+        opacity: 1;
+        padding: 2rem;
+        background-color: v.$gris;
+    }
+    &__contenedor {
+        display: flex;
+        color: v.$blanco;
+        justify-content: space-between;
+        align-items: center;
+        &__logo {
+            transform: skew(-10deg);
+            margin: 0;
+            text-align: center;
+            font-size: 3.6rem;
+        }
+        &__menu-cerrar {
+            @include m.tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__nav {
+        margin-top: 5rem;
+    }
+    &__enlace {
+        color: v.$blanco;
+        display: block;
+        margin-bottom: 1.5rem;
+        border-radius: .5rem;
+        padding: 0.7rem;
+        transition: background-color .3s    ;
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        text-align: center;
+        &:hover,
+        &--activo {
+            background-color: color.adjust(v.$gris, $lightness: -10%);
+            font-weight: 700;
+        }
+        @include m.tablet {
+            font-size: 1.7rem;
+            text-align: left;
+        }
+    }
+
+    &__cerrar-sesion{
+        margin-top: 10rem;
+        &__enlace {
+            @include m.boton(v.$gris, v.$blanco);
+            border-radius: 2.8rem;
+        }
+
+        @include m.tablet{
+            display: none;
+        }
+    }
+}
+

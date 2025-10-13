@@ -1,0 +1,32 @@
+{
+  "name": "gesthor",
+  "version": "1.0.0",
+  "description": "Gestion de Finanzas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "MVC",
+    "SASS",
+    "Gulp",
+    "JS",
+    "PHP"
+  ],
+  "author": "Pedro Soria",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser-js": "^5.2.2",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.90.0",
+    "webpack-stream": "^7.0.0"
+  }
+}

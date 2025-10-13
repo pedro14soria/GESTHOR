@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+.formulario {
+    margin-top: 5rem;
+    &__campo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        &--filtro {
+            @include m.desktop {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__label {
+        flex: 0 0 10rem;
+        &--filtro {
+            @include m.desktop {
+                flex: auto;
+            }
+        }
+    }
+    &__input {
+        flex: 1;
+        border: none;
+        background-color: v.$gris-claro;
+        padding: 1rem;
+    }
+    &__submit {
+        @include m.boton(v.$negro, v.$blanco);
+        &--filtro {
+            border-radius: 1rem;
+            font-size: 1.5rem;
+
+            @include m.desktop {
+                width: auto;
+            }
+        }
+    }
+    &__descripcion {
+        color: v.$gris;
+    }
+    &--filtro {
+        margin-top: 0;
+        @include m.desktop{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}

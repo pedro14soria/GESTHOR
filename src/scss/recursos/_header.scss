@@ -1,0 +1,39 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+.dashboard {
+    background-color: v.$gris-claro;
+    @include m.tablet {
+        display: flex;
+        height: 100vh;
+    }
+    &__principal {
+        flex: 1;
+        overflow: scroll;
+        &::-webkit-scrollbar { 
+            display: none; /* Chrome, Safari, Edge */
+        }
+    }       
+    &__titulo {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+    &__contenido {
+        @include m.contenedor;
+    }
+    &__contenedor-boton {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+    &__boton {
+        @include m.boton(v.$gris-oscuro, v.$blanco);
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: v.$black;
+        @include m.tablet {
+            width: auto;
+        }
+    }
+}

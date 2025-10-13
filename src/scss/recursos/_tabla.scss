@@ -1,0 +1,52 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    &__head {
+        background-color: v.$gris-oscuro;
+        color: v.$blanco;
+    }
+    &__th {
+        padding: 1rem;
+        text-align: left;
+    }
+    &__tr {
+        &:nth-child(even) {
+            background-color: color.adjust(v.$gris-claro, $lightness: -3%);
+        }
+    }
+    &__td {
+        padding: 1.5rem 1rem;
+        &--acciones {
+            @extend .tabla__td;
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            align-items: center;
+        }
+    }
+    &__accion {
+        all: unset;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: v.$bold;
+        &--editar {
+            color: v.$azul;
+        }
+        &--eliminar {
+            color: v.$rojo;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.caja {
+    padding: 2rem;
+    background-color: v.$blanco;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+    border-radius: 1rem;
+}
