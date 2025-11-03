@@ -19,9 +19,9 @@ class DashboardController
         $formas_pago = Forma::belongsTo('usuario_id', $_SESSION['id']);
         $router->render('dashboard/inicio', [
             'titulo' => 'Inicio',
-            'ingresos' => $ingresos,
-            'egresos' => $egresos,
-            'balance' => $balance,
+            'ingresos' => round($ingresos,2),
+            'egresos' => round($egresos,2),
+            'balance' => round($balance, 2),
             'formas_pago' => $formas_pago
         ]);
     }
