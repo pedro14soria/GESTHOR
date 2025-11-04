@@ -4,15 +4,15 @@
     <div class="bloques__grid">
         <div class="bloque bloque--ingresos">
             <h3 class="bloque__heading">Total Ingresos</h3>
-            <p class="bloque__texto--cantidad" id="total-ingresos"><?php echo '$ ' . $ingresos; ?></p>
+            <p class="bloque__texto--cantidad" id="total-ingresos"><?php echo '$ ' . round($ingresos, 2); ?></p>
         </div>
         <div class="bloque bloque--egresos">
             <h3 class="bloque__heading">Total Egresos</h3>
-            <p class="bloque__texto--cantidad" id="total-egresos"><?php echo $egresos; ?></p>
+            <p class="bloque__texto--cantidad" id="total-egresos"><?php echo round($egresos, 2); ?></p>
         </div>
         <div class="bloque bloque--balance">
             <h3 class="bloque__heading">Balance</h3>
-            <p class="bloque__texto--cantidad" id="balance"><?php echo $balance; ?></p>
+            <p class="bloque__texto--cantidad" id="balance"><?php echo round($balance, 2); ?></p>
         </div>
     </div>
 </main>
