@@ -302,7 +302,7 @@
         }
 
         function mostrarAlerta(mensajes, tipo, referencia) {
-            // Elimina alertas  previas
+            // Elimina alertas previas
             const alertaPrevia = document.querySelectorAll('.alerta');
             alertaPrevia.forEach(alerta => alerta.remove());
 
