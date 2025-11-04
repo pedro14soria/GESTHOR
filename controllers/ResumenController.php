@@ -20,7 +20,7 @@ class ResumenController {
         if ($fecha_fin) $whereIngresos[] = "fecha <= '$fecha_fin'";
         if ($forma_pago_id) $whereIngresos[] = "forma_pago_id = '$forma_pago_id'";
         $totalIngresos = Ingresos::filter($whereIngresos);
-        
+
         $whereEgresos = ["usuario_id = '$usuario_id'"];
         if ($fecha_inicio) $whereEgresos[] = "fecha >= '$fecha_inicio'";
         if ($fecha_fin) $whereEgresos[] = "fecha <= '$fecha_fin'";
@@ -30,9 +30,9 @@ class ResumenController {
         $balance = $totalIngresos - $totalEgresos;
 
         echo json_encode([
-            'ingresos' => floatval($totalIngresos),
-            'egresos' => floatval($totalEgresos),
-            'balance' => floatval($balance)
+            'ingresos' => floatval(round($totalIngresos, 2)),
+            'egresos' => floatval(round($totalEgresos,2)),
+            'balance' => floatval(round($balance, 2))
         ]);
     }
 }
