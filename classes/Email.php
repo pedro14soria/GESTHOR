@@ -20,7 +20,7 @@ class Email
 
     public function enviarConfirmacion()
     {
-        debuguear($_ENV['EMAIL_HOST'] . $_ENV['EMAIL_PORT'] . $_ENV['EMAIL_USER'] . $_ENV['EMAIL_PASS']);
+        debuguear($_ENV['EMAIL_HOST'] . " " . $_ENV['EMAIL_PORT'] . " " . $_ENV['EMAIL_USER'] . " " . $_ENV['EMAIL_PASS']);
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();
