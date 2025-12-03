@@ -20,6 +20,7 @@ class Email
 
     public function enviarConfirmacion()
     {
+
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();

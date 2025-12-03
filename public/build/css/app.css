@@ -262,16 +262,16 @@ summary {
 .formulario__label {
   flex: 0 0 10rem;
 }
-@media (min-width: 1024px) {
-  .formulario__label--filtro {
-    flex: auto;
-  }
-}
 .formulario__input {
   flex: 1;
   border: none;
   background-color: #F6F6F6;
   padding: 1rem;
+}
+.formulario__input--filtro {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
 }
 .formulario__submit {
   background-color: #1a1b15;
@@ -303,6 +303,8 @@ summary {
   color: #60656F;
 }
 .formulario--filtro {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 0;
 }
 @media (min-width: 1024px) {
@@ -652,24 +654,35 @@ summary {
   border-collapse: collapse;
 }
 .tabla__head {
+  display: none;
   background-color: #474647;
   color: #FFFFFF;
 }
-.tabla__th {
+.tabla__tr {
+  display: block;
+  margin-bottom: 1.5rem;
   padding: 1rem;
-  text-align: left;
-}
-.tabla__tr:nth-child(even) {
-  background-color: rgb(238.35, 238.35, 238.35);
+  border: 1px solid #ddd;
+  border-radius: 0.8rem;
 }
 .tabla__td, .tabla__td--acciones {
-  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid #eee;
 }
 .tabla__td--acciones {
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
   align-items: center;
+}
+.tabla__td:last-child, .tabla__td--acciones:last-child {
+  border-bottom: none;
+}
+.tabla__td::before, .tabla__td--acciones::before {
+  content: attr(data-label);
+  font-weight: bold;
 }
 .tabla__accion {
   all: unset;
@@ -694,6 +707,42 @@ summary {
   border-radius: 1rem;
 }
 
+@media (min-width: 768px) {
+  .tabla {
+    display: table;
+  }
+  .tabla__head {
+    display: table-header-group;
+  }
+  .tabla__th {
+    display: table-cell;
+    padding: 1rem;
+    text-align: left;
+  }
+  .tabla__body {
+    display: table-row-group;
+  }
+  .tabla__tr {
+    display: table-row;
+    border: none;
+  }
+  .tabla__tr:nth-child(even) {
+    background-color: rgb(238.35, 238.35, 238.35);
+  }
+  .tabla__td, .tabla__td--acciones {
+    display: table-cell;
+    padding: 1.5rem 1rem;
+  }
+  .tabla__td--acciones {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+  }
+  .tabla__td::before, .tabla__td--acciones::before {
+    display: none;
+  }
+}
 .filtros {
   width: min(95%, 140rem);
   margin: 0 auto;

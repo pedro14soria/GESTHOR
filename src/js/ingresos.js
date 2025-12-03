@@ -91,11 +91,11 @@
                 const fila = document.createElement('TR');
                 fila.classList.add('tabla__tr')
                 fila.innerHTML = `
-                    <td class='tabla__td'>${ingreso.descripcion}</td>
-                    <td class='tabla__td'>${ingreso.monto}</td>
-                    <td class='tabla__td'>${ingreso.fecha}</td>
-                    <td class='tabla__td'>${ingreso.forma}</td>
-                    <td class='tabla__td--acciones'>
+                    <td data-label="Descripción" class='tabla__td'>${ingreso.descripcion}</td>
+                    <td data-label="Monto" class='tabla__td'>${ingreso.monto}</td>
+                    <td data-label="Fecha" class='tabla__td'>${ingreso.fecha}</td>
+                    <td data-label="Forma de Pago" class='tabla__td'>${ingreso.forma}</td>
+                    <td data-label="" class='tabla__td--acciones'>
                         <button class="tabla__accion tabla__accion--editar" data-id="${ingreso.id}" data-descripcion="${ingreso.descripcion}">Editar</button>
                         <button class="tabla__accion tabla__accion--eliminar" data-id="${ingreso.id}" >Eliminar</button>
                     </td>

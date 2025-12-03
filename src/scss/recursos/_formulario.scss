@@ -17,17 +17,17 @@
     }
     &__label {
         flex: 0 0 10rem;
-        &--filtro {
-            @include m.desktop {
-                flex: auto;
-            }
-        }
     }
     &__input {
         flex: 1;
         border: none;
         background-color: v.$gris-claro;
         padding: 1rem;
+        &--filtro {
+            box-sizing: border-box;
+            max-width: 100%;
+            width: 100%;
+        }
     }
     &__submit {
         @include m.boton(v.$negro, v.$blanco);
@@ -44,6 +44,8 @@
         color: v.$gris;
     }
     &--filtro {
+        display: flex;
+        flex-wrap: wrap;
         margin-top: 0;
         @include m.desktop{
             display: flex;
