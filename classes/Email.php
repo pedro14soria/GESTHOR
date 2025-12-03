@@ -22,6 +22,7 @@ class Email
     {
 
         // create a new object
+        debuguear($_ENV['EMAIL_HOST'], $_ENV['EMAIL_USER'], $_ENV['EMAIL_PASSWORD']);
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = $_ENV['EMAIL_HOST'];
