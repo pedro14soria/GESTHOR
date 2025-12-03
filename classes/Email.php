@@ -29,8 +29,9 @@ class Email
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
-        $mail->setFrom('cuentas@gesthor.com');
+        $mail->setFrom('gesthoremail@gmail.com', 'Gesthor');
         $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Confirma tu Cuenta';
 
