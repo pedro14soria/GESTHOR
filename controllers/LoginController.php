@@ -55,7 +55,6 @@ class LoginController
 
     public static function logout()
     {
-        echo "entro";
         session_start();
         $_SESSION = [];
         header('Location: /login');
@@ -241,13 +240,6 @@ class LoginController
         $router->render('auth/confirmar', [
             'titulo' => 'Confirma tu cuenta GESTHOR',
             'alertas' => Usuario::getAlertas()
-        ]);
-    }
-
-    public static function inicio(Router $router)
-    {
-        $router->render('auth/index', [
-            'titulo' => 'Inicio'
         ]);
     }
 }

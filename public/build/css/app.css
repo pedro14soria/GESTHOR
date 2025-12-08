@@ -245,6 +245,18 @@ summary {
   cursor: pointer;
 }
 
+.pagina_404__heading {
+  font-weight: 900;
+  margin: 6rem 0 3rem 0;
+  text-align: center;
+}
+.pagina_404__contenedor {
+  text-align: center;
+}
+.pagina_404__enlace {
+  color: #60656F;
+}
+
 .formulario {
   margin-top: 5rem;
 }

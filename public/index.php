@@ -10,11 +10,13 @@ use Controllers\EgresosControlller;
 use Controllers\CategoriaController;
 use Controllers\DashboardController;
 use Controllers\IngresosControlller;
+use Controllers\PaginasController;
 use Controllers\ResumenController;
 
 $router = new Router();
 
-$router->get('/', [LoginController::class, 'inicio']);
+$router->get('/', [PaginasController::class, 'inicio']);
+$router->get('/404', [PaginasController::class, 'error']);
 
 // Login
 $router->get('/login', [LoginController::class, 'login']);

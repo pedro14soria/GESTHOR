@@ -33,7 +33,7 @@ class Router
             //La url existe y tiene una fun asociada
             call_user_func($fn, $this);
         } else {
-            header('Location: /');
+            header('Location: /404');
         }
     }
 
