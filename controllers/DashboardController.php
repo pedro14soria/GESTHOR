@@ -2,11 +2,11 @@
 
 namespace Controllers;
 
-use Model\Categoria;
-use Model\Egresos;
-use Model\Forma;
-use Model\Ingresos;
 use MVC\Router;
+use Model\Forma;
+use Model\Egresos;
+use Model\Ingresos;
+use Model\Categoria;
 
 class DashboardController
 {

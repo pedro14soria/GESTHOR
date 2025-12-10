@@ -23,6 +23,8 @@
         border: none;
         background-color: v.$gris-claro;
         padding: 1rem;
+        max-width: 100%;
+        width: 100%;
         &--filtro {
             box-sizing: border-box;
             max-width: 100%;
@@ -39,11 +41,15 @@
                 width: auto;
             }
         }
+        &--perfil {
+            margin-bottom: 1rem;
+        }
     }
     &__descripcion {
         color: v.$gris;
     }
-    &--filtro {
+    &--filtro,
+    &--perfil {
         display: flex;
         flex-wrap: wrap;
         margin-top: 0;
@@ -51,5 +57,8 @@
             display: flex;
             justify-content: space-evenly;
         }
+    }
+    &--perfil {
+        flex-direction: column;
     }
 }

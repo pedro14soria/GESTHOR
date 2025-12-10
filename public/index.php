@@ -6,12 +6,13 @@ use MVC\Router;
 use Model\Egresos;
 use Controllers\FormaController;
 use Controllers\LoginController;
+use Controllers\PerfilController;
+use Controllers\PaginasController;
+use Controllers\ResumenController;
 use Controllers\EgresosControlller;
 use Controllers\CategoriaController;
 use Controllers\DashboardController;
 use Controllers\IngresosControlller;
-use Controllers\PaginasController;
-use Controllers\ResumenController;
 
 $router = new Router();
 
@@ -74,6 +75,12 @@ $router->get('/api/ingresos', [IngresosControlller::class, 'index']);
 $router->post('/api/ingresos/ingreso', [IngresosControlller::class, 'crear']);
 $router->post('/api/ingresos/eliminar', [IngresosControlller::class, 'eliminar']);
 $router->post('/api/ingresos/actualizar', [IngresosControlller::class, 'actualizar']);
+
+//Perfil
+$router->get('/dashboard/perfil', [PerfilController::class, 'perfil']);
+$router->post('/dashboard/perfil', [PerfilController::class, 'perfil']);
+$router->post('/dashboard/password', [PerfilController::class, 'contraseña']);
+
 
 
 $router->comprobarRutas();

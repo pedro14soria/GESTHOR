@@ -279,6 +279,8 @@ summary {
   border: none;
   background-color: #F6F6F6;
   padding: 1rem;
+  max-width: 100%;
+  width: 100%;
 }
 .formulario__input--filtro {
   box-sizing: border-box;
@@ -311,19 +313,25 @@ summary {
     width: auto;
   }
 }
+.formulario__submit--perfil {
+  margin-bottom: 1rem;
+}
 .formulario__descripcion {
   color: #60656F;
 }
-.formulario--filtro {
+.formulario--filtro, .formulario--perfil {
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
 }
 @media (min-width: 1024px) {
-  .formulario--filtro {
+  .formulario--filtro, .formulario--perfil {
     display: flex;
     justify-content: space-evenly;
   }
+}
+.formulario--perfil {
+  flex-direction: column;
 }
 
 .acciones {
@@ -755,7 +763,8 @@ summary {
     display: none;
   }
 }
-.filtros {
+.filtros,
+.perfil {
   width: min(95%, 140rem);
   margin: 0 auto;
   padding: 2rem;
@@ -763,6 +772,29 @@ summary {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
   border-radius: 1rem;
   margin-bottom: 3rem;
+}
+.filtros__enlace,
+.perfil__enlace {
+  background-color: #60656F;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+.filtros__enlace:hover,
+.perfil__enlace:hover {
+  background-color: rgb(72.347826087, 76.115942029, 83.652173913);
+  cursor: pointer;
+}
+.filtros__titulo,
+.perfil__titulo {
+  text-align: center;
 }
 
 .categorias {

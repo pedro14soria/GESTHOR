@@ -11,7 +11,7 @@
         <a class="sidebar__enlace sidebar__enlace--<?php echo ($titulo === 'Egresos') ? 'activo' : ''; ?>" href="/dashboard/egresos">Egresos</a>
         <a class="sidebar__enlace sidebar__enlace--<?php echo ($titulo === 'Categorias') ? 'activo' : ''; ?>" href="/dashboard/categorias">Categorias</a>
         <a class="sidebar__enlace sidebar__enlace--<?php echo ($titulo === 'Formas de Pago') ? 'activo' : ''; ?>" href="/dashboard/formas">Formas de Pago</a>
-        <a class="sidebar__enlace sidebar__enlace--<?php echo ($titulo === 'Perfil') ? 'activo' : ''; ?>" href="/perfil">Perfil</a>
+        <a class="sidebar__enlace sidebar__enlace--<?php echo ($titulo === 'Perfil') ? 'activo' : ''; ?>" href="/dashboard/perfil">Perfil</a>
     </nav>
 
     <div class="sidebar__cerrar-sesion">

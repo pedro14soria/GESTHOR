@@ -11,7 +11,6 @@ class LoginController
 {
     public static function login(Router $router)
     {
-
         $alertas = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -175,7 +174,7 @@ class LoginController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $token_valido) {
-
+            $usuario = new Usuario;
             // Añadir el nuevo password
             $usuario->sincronizar($_POST);
 
@@ -211,7 +210,6 @@ class LoginController
 
     public static function mensaje(Router $router)
     {
-
         $router->render('auth/mensaje', [
             'titulo' => 'Cuenta Creada Exitosamente'
         ]);

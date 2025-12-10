@@ -1,11 +1,19 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.filtros {
+.filtros,
+.perfil {
     @include m.contenedor;
     padding: 2rem;
     background-color: v.$blanco;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
     border-radius: 1rem;
     margin-bottom: 3rem;
+
+    &__enlace {
+        @include m.boton(v.$gris, v.$blanco);
+    }
+    &__titulo {
+        text-align: center;
+    }
 }
